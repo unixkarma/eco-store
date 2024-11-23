@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Store</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #00bcd4;
+        }
+
+        /* Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                background-color: #333;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 100%;
+                padding: 10px 20px;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Eco Store</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="nav-menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#quienes-somos">¿Quiénes somos?</a>
+            <a href="#productos">Productos</a>
+            <a href="#por-que">¿Por qué?</a>
+            <a href="#para-quienes">¿Para quiénes?</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" style="padding: 20px;">
+            <h1>Bienvenido a Eco Store</h1>
+            <p>Sección de inicio.</p>
+        </section>
+        <section id="quienes-somos" style="padding: 20px;">
+            <h1>¿Quiénes somos?</h1>
+            <p>Información sobre nuestra organización.</p>
+        </section>
+        <section id="productos" style="padding: 20px;">
+            <h1>Productos</h1>
+            <p>Listado de Productos.</p>
+        </section>
+        <section id="por-que" style="padding: 20px;">
+            <h1>¿Por qué?</h1>
+            <p>Razones para elegirnos.</p>
+        </section>
+        <section id="para-quienes" style="padding: 20px;">
+            <h1>¿Para quiénes?</h1>
+            <p>Descripción del público objetivo.</p>
+        </section>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
